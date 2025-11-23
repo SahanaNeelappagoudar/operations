@@ -1,26 +1,21 @@
-def add(a, b):
-    return a + b
 
-def subtract(a, b):
-    return a - b
-
-def multiplication(a, b):
-    return a * b
-
-def division(a, b):
-    return a / b
-
+import sys
 
 def main():
-    num1 = float(input("Enter first number: "))
-    num2 = float(input("Enter second number: "))
-   
+    if len(sys.argv) < 3:
+        print("Error: Please provide two numbers.")
+        print("Example: python add_sub.py 10 20")
+        return
 
-    print("Addition:", add(num1, num2))
-    print("Subtraction:", subtract(num1, num2))
-    print("Multiplication:", multiplication(num1, num2))
-    print("Division:", division(num1, num2))
-    
+    # Convert command-line arguments to numbers
+    a = float(sys.argv[1])
+    b = float(sys.argv[2])
+
+    addition = a + b
+    subtraction = a - b
+
+    print("Addition:", addition)
+    print("Subtraction:", subtraction)
 
 if __name__ == "__main__":
     main()
